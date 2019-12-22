@@ -66,10 +66,6 @@
       if (!audio) return;
       audio.currentTime = 0; //rewind
       audio.play();
-      if(div.classList.contains("playing")){
-        div.classList.remove("playing");
-        return;
-      } 
       div.classList.add("playing");
     }
 
@@ -80,16 +76,17 @@
 
     window.addEventListener('keydown', playSounds)
 
-    const keys = Array.from(document.querySelectorAll(".key"));
-    // const keys = document.querySelectorAll(".key");
-    // keys.forEach(key => {
-    //   key.addEventListener("transitionend",removeTransition);
-    // })
+    const keys = Array.from(document.querySelectorAll(".key")); // Array.from Creates an array from an iterable object.
+    const keys = document.querySelectorAll(".key");
     keys.forEach(key => {
-      key.addEventListener("transitionend", ()=>{
-        key.classList.remove("playing");
-      });
+      key.addEventListener("transitionend",removeTransition);
     })
+    
+    // keys.forEach(key => {
+    //   key.addEventListener("transitionend", ()=>{
+    //     key.classList.remove("playing");
+    //   });
+    // })
     
   </script>
 
