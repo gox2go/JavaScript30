@@ -70,18 +70,36 @@
       transition: transform 0.1s;
       transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
     }
-    
-    .second-hand{
+
+    .second-hand {
       height: 3px;
     }
-
   </style>
 
   <script>
     const secondHand = document.querySelector(".second-hand");
     const minHand = document.querySelector(".min-hand")
     const hourHand = document.querySelector(".hour-hand")
-    console.log(secondHand);
+
+    // function initDegree(base) {
+    //   return function (current) {
+    //     return (current / base) * 360
+    //   };
+    // }
+
+    // const getMinDegree = initDegree(60), getSecondDegree = initDegree(60);
+    // const getHourDegree = initDegree(12);
+
+    // const getDetailDegree = {
+    //   getMinDegree,
+    //   getHourDegree,
+    //   getSecondDegree,
+    // }
+
+    // function getDegree(deg, type) {
+    //   getDetailDegree[type](deg);
+    // }
+
 
     window.setInterval(() => {
       const date = new Date();
@@ -95,7 +113,7 @@
       minHand.style.transform = `rotate(${minDegrees + 90}deg)`;
 
       const hour = date.getHours();
-      const hourDegrees = ((hour / 12) + (min / 60) / 12) * 360; 
+      const hourDegrees = ((hour / 12) + (min / 60) / 12) * 360;
       hourHand.style.transform = `rotate(${hourDegrees + 90}deg)`;
 
     }, 1000)
