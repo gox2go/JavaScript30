@@ -9,4 +9,12 @@
 3. document**.**documentElement**.**style.setProperty
 4. document.querySelectorAll('.controls input'); 层级关系
 
-#### 
+
+
+## Day2 arry 
+
+### FAQ
+
+1. Array.prototype.sort(compareFunc)
+
+   whats the meaning of the return value
